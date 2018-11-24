@@ -1,0 +1,10 @@
+
+how to curl for Rubio ecs
+curl 130.195.4.176:8080 > test2.html
+
+
+
+
+130.195.4.176:8080/test
+
+regent: 130.195.6.160
