@@ -4,7 +4,9 @@ var app = express();
 var port = process.env.PORT || 8080;
 var pg = require("pg");
 var http = require("http");
+const db = require('pg');
 
+/** 
 var config = {
 	user: 'admin',
 	database: 'book_db',
@@ -29,7 +31,7 @@ module.exports.connect = function (callback){
 	return pool.connect(callback);
 }
 //'postgres://admin:secret@localhost:5432/accounts_db'
-
+*/
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json()); // for parsing application/json
 
@@ -56,6 +58,7 @@ res.send(..2/website/project1/index.html);
 });
 */
 app.get('/getTasks', function(req, res){
+	console.log("sent all tasks");
 	res.send(JSON.stringify(tasks)); 
 });
 
@@ -63,6 +66,7 @@ app.get('/getTasks', function(req, res){
 used to add a new task to the server
 */
 app.post('/newTask',function(req, res){
+	console.log("test")
 	console.log("adding new task: '"+req.body.todo+"'");
 	tasks.push(req.body);//add to our array of tasks
 	res.send("sucessfully added: '"+req.body.todo +"' to the server");
